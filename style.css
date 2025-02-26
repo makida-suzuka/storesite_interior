@@ -43,7 +43,7 @@ header
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 15px;
+    padding: 20px 15px;
 }
 .logo{
     width: 180px;
