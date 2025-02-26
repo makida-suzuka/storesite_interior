@@ -1,0 +1,407 @@
+@charset "UTF-8";
+
+html{
+    font-size: 100%;
+}
+body{
+    font-family: 'YuGothic';
+    font-size: 0.85rem;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    opacity: 0.7;
+}
+li{
+    list-style: none;
+}
+main{
+    margin: 0;
+    padding: 0;
+}
+
+/* 全体の最大幅は1360pxで横のパディングは40pxです。 */
+.contents-all{
+    max-width: 1360px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+/*--------------------------------------
+header
+---------------------------------------*/
+#header{
+    /*固定header*/
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+.logo{
+    width: 180px;
+    margin: 0;
+}
+.logo img{
+    width: 100%;
+}
+.menu-right{
+    z-index: 1;
+    position: fixed;
+    color: #fff;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateX(100%); /* Y軸ではなくX軸を使う */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* スライド速度を0.6秒に設定 */
+}
+
+#hamburger {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 25px;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#hamburger span,
+#hamburger::before,
+#hamburger::after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out; /* 線のアニメーション */
+}
+
+#hamburger span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: translateY(-50%);
+}
+  
+#hamburger::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+  
+#hamburger::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+  
+/* メニューが開いたときのクロススタイル */
+.hamburger-active #hamburger span {
+    opacity: 0;
+}
+  
+.hamburger-active #hamburger::before {
+    top: 45%;
+    transform: rotate(45deg); /* 上の線を45度回転させてクロス */
+    background-color: #fff;
+}
+  
+.hamburger-active #hamburger::after {
+    bottom: 45%;
+    transform: rotate(-45deg); /* 下の線を-45度回転させてクロス */
+    background-color: #fff;
+}
+
+.menu-right.open {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* 開閉両方に適用 */
+}
+
+  
+.menu-right ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+}
+  
+.menu-right li {
+    margin: 0;
+    padding: 0;
+}
+    
+.menu-right li a{
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+
+
+
+
+/*--------------------------------------
+products
+---------------------------------------*/
+#products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product{
+    width: 25%;
+    box-sizing: border-box;
+    padding: 0 15px 30px 15px;
+}
+.pro-img{
+    width: 100%;
+}
+.pro-title{
+    margin: 0;
+}
+.pro-price{
+    margin: 0;
+}
+#products-page .contents-title{
+    padding: 15px;
+}
+
+/*--------------------------------------
+View more button
+---------------------------------------*/
+.top-button{
+    text-align: center;
+    padding: 30px 15px;
+}
+
+/*----------------------------------------
+pager
+----------------------------------------*/
+.page{
+    justify-content: center;
+    display: flex;
+}
+.page p{
+    color: #000;
+    padding: 20px;
+}
+
+/*-----------------------------------------------------------------
+about page
+-------------------------------------------------------------------*/
+/*company共通*/
+.contents-small{
+    padding: 15px;
+    max-width: 600px;
+    display: flex;
+    justify-content: left;
+}
+/*company共通*/
+.contents-title{
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+.contents-small p{
+    margin: 0 0 40px 0;
+} 
+
+/*---------------------------------------------------------------------
+company
+-----------------------------------------------------------------------*/
+.about-contents dl{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.about-contents dl dt{
+    width: 30%;
+    padding: 20px 0;
+    border-bottom: solid 1px #DCDBDB;
+}
+.about-contents dl dd{
+    width: 70%;
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: solid 1px #DCDBDB;
+}
+.about-contents dl dd:nth-child(10),.about-contents dl dt:nth-child(9){
+    border-bottom: none;
+}
+.acces-map iframe{
+   filter: grayscale(100%); 
+}
+
+/*-----------------------------------------------------------------------
+item
+------------------------------------------------------------------------*/
+#item-page{
+    max-width: 800px;
+}
+#item-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.item-info-img{
+    width: 45%;
+}
+.item-info-text{
+    width: 45%;
+}
+.item-info-text p:first-child{
+    margin-top: 0;
+}
+.price{
+    margin: 30px 0;
+}
+.item-info-text dl{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.item-info-text dt{
+    width: 30%;
+}
+.item-info-text dd{
+    width: 65%;
+    margin: 0;
+}
+.back-link{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+/*--------------------------------------
+footer 
+---------------------------------------*/
+#footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+#footer .sns-list{
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+#footer .sns-list li{
+    font-size: 0.8rem;
+    padding-right: 20px;
+}
+#footer .copyright{
+    font-size: 0.7rem;
+}
+
+/*------------------------------------------
+Responsive
+--------------------------------------------*/
+@media screen and (max-width: 900px){
+    body{
+        font-family: 'YuGothic',sans-serif;
+    }
+    /*header*/
+    #header{
+        padding: 10px 5px;
+
+    }
+
+    /*products*/
+    .product{
+        width: 50%;
+        padding: 0 5px 20px 5px;
+
+    }
+
+    /*footer*/
+    #footer{
+        flex-wrap: wrap;
+    }
+
+    /*------------
+    company
+    --------------*/
+    .about-contents dl{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .about-contents dl dt{
+        width: 100%;
+        border-bottom: none;
+        padding: 15px 0 0 0;
+    }
+    .about-contents dl dd{
+        width: 100%;
+        padding: 10px 0 15px 0;
+    }
+
+    .acces-map iframe{
+        width: 100%;
+    }
+
+    /*products*/
+    #products-page .contents-title{
+        padding: 5px;
+    }
+    /*-----
+    item
+    -------*/
+    #item-info{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .item-info-img{
+        width: 100%;
+    }
+    .item-info-text{
+        width: 100%;
+    }
+    .item-info-text p:first-child{
+        margin-top: 13px;
+    }
+    .back-link{
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+    }
+
+
+
+
+
+}
