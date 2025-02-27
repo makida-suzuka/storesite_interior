@@ -1,5 +1,5 @@
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function()  {
 
     document.getElementById("hamburger").addEventListener("click", function () {
         // ハンバーガーメニューのクラスをトグル
@@ -11,5 +11,5 @@ window.onload = function() {
         document.body.classList.toggle("hamburger-active");
       });
 
-}
+});
 
