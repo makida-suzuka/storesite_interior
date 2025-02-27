@@ -367,9 +367,9 @@ footer
 Responsive
 --------------------------------------------*/
 @media screen and (max-width: 900px){
-    body{
+    /* body{
         font-family: 'YuGothic',sans-serif;
-    }
+    } */
     /*header*/
     #header{
         padding: 10px 5px;
