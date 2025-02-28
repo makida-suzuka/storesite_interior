@@ -3,10 +3,18 @@
 html{
     font-size: 100%;
 }
+/* font */
+.noto-sans-jp-uniquifier {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
 body{
-    font-family: 'YuGothic';
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 0.85rem;
-    font-weight: 100;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -267,7 +275,7 @@ about page
 /*company共通*/
 .contents-title{
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 .contents-small p{
     margin: 0 0 40px 0;
@@ -367,9 +375,9 @@ footer
 Responsive
 --------------------------------------------*/
 @media screen and (max-width: 900px){
-    /* body{
-        font-family: 'YuGothic',sans-serif;
-    } */
+    body{
+        font-family: 'Noto Sans JP', serif;
+    }
     /*header*/
     #header{
         padding: 10px 5px;
